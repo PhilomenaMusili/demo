@@ -32,3 +32,11 @@ form {
     padding: 10px;
     text-align: center;
 }
+h1 {
+    color: #333;
+    margin-top: 20px; 
+}
+.title {
+    font-weight: bold;
+    color: #0ec71d;
+}

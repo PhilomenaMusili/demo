@@ -3,8 +3,9 @@
     <h1>Todo List</h1>
     <ul>
         {% for todo in todos %}
-        <li>
-            {{ todo}}: {% if todo.completed %}Completed {% else %}Not completed{% endif %}
+        <li {% if todo.completed %}class="completed"{% endif %}>
+            <span class="title">{{ todo.title }}</span>: 
+            <span>{% if todo.completed %}Completed{% else %}Not completed{% endif %}</span>
         </li>
         {% endfor %}
     </ul>
