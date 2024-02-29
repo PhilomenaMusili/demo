@@ -1,8 +1,14 @@
+<!-- contact_form.html -->
 {% extends 'base.html' %}
 {% block content %}
-    <form action="post" action="{% url 'contact' %}">
+    <form method="post" action="{% url 'contact' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        {% if form.instance.id %}
+            <a href="{% url 'update_contact' pk=form.instance.id %}" class="btn btn-info">Update</a>
+        {% else %}
+        
+        {% endif %}
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
 {% endblock %}
